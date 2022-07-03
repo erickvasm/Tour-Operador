@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TipoDePago extends Model
 {
     use HasFactory;
+
+    public $fillable = [
+        'id_tipo_pago',
+        'descripcion',
+    ];
 }

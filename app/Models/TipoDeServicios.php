@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class TipoDeServicios extends Model
 {
     use HasFactory;
+
+    public $fillable = [
+        'id_tipo_servicio',
+        'descripcion',
+    ];
+
 }
