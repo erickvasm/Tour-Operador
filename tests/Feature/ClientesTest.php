@@ -5,18 +5,18 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Clientes;
 
 class ClientesTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
-    {
-        $response = $this->get('/');
+     /** @test */
+     public function addCliente()
+     {
+         $clientes = Clientes::factory(1)->create();
 
-        $response->assertStatus(200);
-    }
+         Clientes::addClientes($clientes);
+
+         $this->assertEquals(1, $cliente->count());
+        
+     }
 }
