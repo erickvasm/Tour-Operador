@@ -16,22 +16,19 @@ class Clientes extends Model
         'correo'
    ];
 
-   public function preventTooManyUsers()
-   {
-       if($this->count() >= $this->size){
-           throw new \Exception('Ohh Error');
-       }
-   }
-
    //add clientes to clientebase
-    public function addClientes($cliente)
+    public static function addClientes($clientes)
     {
-
-         $this->id_cliente = $cliente['id_cliente'];
-         $this->nombre = $cliente['nombre'];
-         $this->correo = $cliente['correo'];
-         $this->save();
+        foreach ($clientes as $cliente) {
+            $cliente->save();
+        }
     }
+
+
+
+
+
+
 
     //get all clientes from clientebase
     public function getClientes()
@@ -56,8 +53,8 @@ class Clientes extends Model
              ->delete();
     }
 
-    //get clientes by id from clientebase
-    public function getClienteById($id_cliente)
+    //get clientes by id_cliente from clientebase
+    public function getClienteByid_cliente($id_cliente)
     {
         return $this->where('id_cliente', $id_cliente)
                     ->first();
