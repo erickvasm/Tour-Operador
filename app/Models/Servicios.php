@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reservaciones extends Model
+class Servicios extends Model
 {
     use HasFactory;
 
+
     public $fillable = [
-        'id_reservacion',
-        'fecha_reserva',
-       'cliente_fk',
-   ];
+    	'id_servicio',
+    	'actividad',
+    	'descripcion',
+
+    ];
 
 }
