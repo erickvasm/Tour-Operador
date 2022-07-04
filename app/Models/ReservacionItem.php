@@ -11,7 +11,7 @@ class ReservacionItem extends Model
 
 
     public $fillable =[
-    	'id_reservacion_item'
+    	'id_reservacion_item',
       	'fecha_hora',
       	'numero_vuelo', 
        	'pasajeros',
@@ -23,7 +23,7 @@ class ReservacionItem extends Model
        	'tipo_pago_fk',
        	'proveedor_fk',
        	'tipo_servicio_fk',
-       	'chofer_vehiculo_fk',
+       	'chofer_vehiculo_fk'
     ];
 
 }
