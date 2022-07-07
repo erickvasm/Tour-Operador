@@ -17,7 +17,8 @@ class EstadoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_estado' => $this->faker->numberBetween(1, 1000),
+            'descripcion' => $this->faker->text,
         ];
     }
 }

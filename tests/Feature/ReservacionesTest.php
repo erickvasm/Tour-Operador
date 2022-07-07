@@ -6,12 +6,63 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\Reservaciones;
+use App\Models\ReservacionItem;
 use App\Models\Clientes;
+use App\Models\Servicios;
+use App\Models\Proveedor;
+use App\Models\TipoDeServicios;
+use App\Models\TipoDePago;
+use App\Models\ChoferVehiculo;
+use App\Models\Estado;
+
 
 class ReservacionesTest extends TestCase
 {
     use RefreshDatabase;
 
+
+    /** @test */
+    public function addReservacionItem(){
+        $cliente = Clientes::factory()->create();
+        $servicio = Servicios::factory()->create();
+        $proveedor = Proveedor::factory()->create();
+        $tipoDeServicio = TipoDeServicios::factory()->create();
+        $tipoPago = TipoDePago::factory()->create();
+        $choferVehiculo = ChoferVehiculo::factory()->create();
+        $estado = Estado::factory()->create();
+        $reservacion = [
+            'fecha_reserva' => '2020-01-01',
+            'cliente_fk' => $cliente->id_cliente,
+
+        ];
+        Reservaciones::addReservaciones($reservacion);
+    
+
+        $reservacionItem = [
+            'fecha_hora' => '2020-01-01',
+            'numero_vuelo'=> 120,
+            'pasajeros' => 2,
+            'tarifa' => 100,
+            'observaciones' => 'observaciones',
+            'estado_fk' => $estado->id_estado,
+            'servicio_fk' => $servicio->id_servicio,
+            'tipo_pago_fk' => $tipoPago->id_tipo_pago,
+            'proveedor_fk' => $proveedor->id_proveedor,
+            'tipo_servicio_fk' => $tipoDeServicio->id_tipo_servicio,
+            'chofer_vehiculo_fk' => $choferVehiculo->id_chofer_vehiculo,
+            'reservacion_fk' => Reservaciones::all()->last()->id_reservacion
+        ];
+
+        $reservacionItem = ReservacionItem::addReservacionItem($reservacionItem);
+
+        $this->assertEquals(1, ReservacionItem::all()->count());
+
+
+
+    }
+
+
+    
     /** @test */
     public function addReservacion()
     {
@@ -72,6 +123,10 @@ class ReservacionesTest extends TestCase
 
         $this->assertEquals(0, Reservaciones::all()->count());
     }
+
+
+
+
 
 
 }
