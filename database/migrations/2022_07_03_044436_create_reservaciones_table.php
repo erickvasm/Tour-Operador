@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservaciones', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_reservacion')->autoIncrement();
+            $table->string('fecha_reserva');
+            $table->unsignedBigInteger('cliente_fk');
+            $table->foreign('cliente_fk')->references('id_cliente')->on('clientes')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,7 +17,9 @@ class ReservacionesFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_reservacion' => $this->faker->numberBetween(1, 1000),
+            'fecha_reserva' => $this->faker->dateTime,
+            'cliente_fk' => $this->faker->numberBetween(1, 1000),
         ];
     }
 }
