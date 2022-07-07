@@ -17,7 +17,8 @@ class TipoDeGastosFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_tipo_gasto' => $this->faker->numberBetween(1, 1000),
+            'descripcion' => $this->faker->name,
         ];
     }
 }

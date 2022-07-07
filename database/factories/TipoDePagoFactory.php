@@ -14,10 +14,11 @@ class TipoDePagoFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
-    {
+    public function definition(){
         return [
-            //
+            'id_tipo_pago' => $this->faker->numberBetween(1, 100),
+            'descripcion' => $this->faker->word,
         ];
     }
+
 }

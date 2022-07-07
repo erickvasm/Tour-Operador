@@ -17,7 +17,8 @@ class TipoDeServiciosFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_tipo_servicio' => $this->faker->numberBetween(1, 100),
+            'descripcion' => $this->faker->word,
         ];
     }
 }

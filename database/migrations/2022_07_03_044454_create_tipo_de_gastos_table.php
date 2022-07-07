@@ -11,11 +11,14 @@ return new class extends Migration
      *
      * @return void
      */
+    protected $primaryKey = 'id_tipo_gasto';
     public function up()
     {
         Schema::create('tipo_de_gastos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table -> id('id_tipo_gasto');
+            $table -> string('descripcion');
+            $table -> timestamps();
+
         });
     }
 
