@@ -50,6 +50,7 @@ class TipoDeGastosTest extends TestCase
         $this->assertEquals('Modificado TipoDeGasto', $elTipoTipoDeGastos->descripcion);
     }
 
+
     /** @test */
     public function deleteTipoDeGasto()
     {
@@ -63,4 +64,6 @@ class TipoDeGastosTest extends TestCase
 
         $this->assertEquals(0, TipoDeGastos::all()->count());
     }
+
+
 }

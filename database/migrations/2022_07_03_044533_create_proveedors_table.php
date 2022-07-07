@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    protected $primaryKey = 'id_proveedor';
     /**
      * Run the migrations.
      *
