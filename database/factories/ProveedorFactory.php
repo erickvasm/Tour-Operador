@@ -17,7 +17,10 @@ class ProveedorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_proveedor' => $this->faker->numberBetween(1, 1000),
+            'nombre' => $this->faker->name,
+            'correo' => $this->faker->email,
+
         ];
     }
 }

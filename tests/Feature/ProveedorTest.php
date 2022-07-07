@@ -5,18 +5,19 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Proveedor;
 
 class ProveedorTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    use RefreshDatabase;
+    //test if proveedor is added to database
+    /** @test */  
+    public function proveedor_is_added_to_database()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $proveedor = Proveedor::factory(2)->make();
+        $this->post('/proveedor', $proveedor->toArray());
+        Proveedor::addProveedor($proveedor);
+        $this->assertEquals(2, Proveedor::count());
     }
+
 }

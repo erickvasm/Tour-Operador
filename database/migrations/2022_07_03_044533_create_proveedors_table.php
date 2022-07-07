@@ -14,8 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('proveedors', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_proveedor');
+            $table->string('nombre');
+            $table->string('correo');
             $table->timestamps();
+
         });
     }
 

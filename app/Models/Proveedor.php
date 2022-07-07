@@ -12,6 +12,16 @@ class Proveedor extends Model
     public $fillable = [
         'id_proveedor',
         'nombre',
+        'correo',
         
     ];
+//add multiple proveedors to database
+public static function addProveedor($Proveedors)
+{
+    foreach ($Proveedors as $proveedor) {
+        $proveedor->save();
+    }
+}
+
+
 }
