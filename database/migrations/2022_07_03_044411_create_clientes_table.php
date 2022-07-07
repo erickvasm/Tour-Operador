@@ -11,6 +11,9 @@ return new class extends Migration
      *
      * @return void
      */
+
+    protected $primaryKey = 'id_cliente';
+
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {

@@ -10,53 +10,55 @@ class Clientes extends Model
 {
     use HasFactory;
 
+
+    protected $primaryKey = 'id_cliente';
+
     public $fillable = [
         'id_cliente',
         'nombre',
         'correo'
    ];
 
-   //add clientes to clientebase
-    public static function addClientes($clientes)
+
+
+    //add clientes to clientebase
+    public static function addCliente($atributosCliente)
     {
-        foreach ($clientes as $cliente) {
-            $cliente->save();
-        }
+    
+        $cliente = new Clientes();
+        $cliente->nombre=$atributosCliente['nombre'];
+        $cliente->correo=$atributosCliente['correo'];
+        $cliente->save();
+
+        return $cliente;
+
     }
 
-
-
-
-
-
-
-    //get all clientes from clientebase
-    public function getClientes()
-    {
-        return $this->all();
-    }
 
     //edit clientes in clientebase
-    public function editClientes($cliente)
+    public static function editCliente($atributosClienteModificados)
     {
-        $this->where('id_cliente', $cliente['id_cliente'])
+
+        Clientes::Where('id_cliente', $atributosClienteModificados['id_cliente'])
              ->update([
-                 'nombre' => $cliente['nombre'],
-                 'correo' => $cliente['correo']
+                 'nombre' => $atributosClienteModificados['nombre'],
+                 'correo' => $atributosClienteModificados['correo']
              ]);
+
     }
 
     //delete clientes from clientebase
-    public function deleteClientes($id_cliente)
+    public static function deleteCliente($id_cliente)
     {
-        $this->where('id_cliente', $id_cliente)
-             ->delete();
+        Clientes::Where('id_cliente', $id_cliente)->delete();
     }
 
     //get clientes by id_cliente from clientebase
-    public function getClienteByid_cliente($id_cliente)
+    public static function getClienteById($id_cliente)
     {
-        return $this->where('id_cliente', $id_cliente)
-                    ->first();
+        return Clientes::Where('id_cliente', $id_cliente)->first();
     }
+
+
+
 }

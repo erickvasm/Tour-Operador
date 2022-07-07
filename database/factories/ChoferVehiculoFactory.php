@@ -17,7 +17,9 @@ class ChoferVehiculoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_chofer_vehiculo' => $this->faker->numberBetween(1, 1000),
+            'nombre_chofer' => $this->faker->name,
+            'placa_vehiculo' => $this->faker->unique()->bothify('#######'),
         ];
     }
 }

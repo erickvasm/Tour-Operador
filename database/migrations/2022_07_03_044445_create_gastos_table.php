@@ -11,10 +11,20 @@ return new class extends Migration
      *
      * @return void
      */
+
+
+    protected $primaryKey = 'id_gasto';
+
+
     public function up()
     {
         Schema::create('gastos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_gasto');
+            $table->dateTime('fecha');
+            $table->double('monto');
+            $table->string('descripcion');
+            $table->boolean('gasto_vehiculo');
+            $table->foreignId('tipo_gasto_fk');
             $table->timestamps();
         });
     }

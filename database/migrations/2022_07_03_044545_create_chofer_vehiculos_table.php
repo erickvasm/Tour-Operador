@@ -11,10 +11,16 @@ return new class extends Migration
      *
      * @return void
      */
+
+
+    protected $primaryKey = 'id_chofer_vehiculo';
+
     public function up()
     {
         Schema::create('chofer_vehiculos', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_chofer_vehiculo');
+            $table->string('nombre_chofer');
+            $table->string('placa_vehiculo');
             $table->timestamps();
         });
     }

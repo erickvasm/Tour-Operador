@@ -11,10 +11,14 @@ return new class extends Migration
      *
      * @return void
      */
+
+    protected $primaryKey = 'id_estado';
+
     public function up()
     {
         Schema::create('estados', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_estado');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
