@@ -37,7 +37,7 @@ class ProveedorTest extends TestCase
             'correo' => 'correo@correo'
         ];
         $elProveedor=Proveedor::addProveedor($proveedores);
-        print($elProveedor);
+      
         $proveedorModified = [
             'id_proveedor' => $elProveedor->id_proveedor,
             'nombre' => 'Proveedor 1 Modificado',
@@ -62,14 +62,14 @@ class ProveedorTest extends TestCase
             'correo' => 'correo@correo'
         ];
         $elProveedor=Proveedor::addProveedor($proveedores);
+
+        $this->assertEquals(1, Proveedor::all()->count());
         
         Proveedor::deleteProveedor($elProveedor->id_proveedor);
     
         
         $this->assertEquals(0, Proveedor::all()->count());
     }
-
-
 
 
 }

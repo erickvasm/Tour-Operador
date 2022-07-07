@@ -17,7 +17,9 @@ class ServiciosFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'id_servicio' => $this->faker->numberBetween(1, 1000),
+            'actividad' => $this->faker->name,
+            'descripcion' => $this->faker->text,
         ];
     }
 }
