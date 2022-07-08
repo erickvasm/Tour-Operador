@@ -18,7 +18,7 @@ class ChoferVehiculo extends Model
     ];
 
 
-    //add clientes to clientebase
+  
     public static function addChoferVehiculo($atributosChoferVehiculo)
     {
     
@@ -32,7 +32,6 @@ class ChoferVehiculo extends Model
     }
 
 
-    //edit clientes in clientebase
     public static function editChoferVehiculo($atributosChoferVehiculoModificados)
     {
 
@@ -44,13 +43,13 @@ class ChoferVehiculo extends Model
 
     }
 
-    //delete clientes from clientebase
+   
     public static function deleteChoferVehiculo($id_chofer_vehiculo)
     {
         ChoferVehiculo::Where('id_chofer_vehiculo', $id_chofer_vehiculo)->delete();
     }
 
-    //get clientes by id_cliente from clientebase
+    
     public static function getChoferVehiculoById($id_chofer_vehiculo)
     {
         return ChoferVehiculo::Where('id_chofer_vehiculo', $id_chofer_vehiculo)->first();

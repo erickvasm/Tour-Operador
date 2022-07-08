@@ -16,7 +16,7 @@ class TipoDeServicios extends Model
         'descripcion',
     ];
 
-    //add TipoDeServicios in the database
+   
     public static function addTipoDeServicios($tipoDeServicios)
     {
         $tipoDeServicio = new TipoDeServicios();
@@ -26,13 +26,13 @@ class TipoDeServicios extends Model
         return $tipoDeServicio;
     }
 
-    //get all TipoDeServicios from the database
+  
     public function getTipoDeServicios()
     {
         return $this->all();
     }
 
-    //edit TipoDeServicios in the database
+   
     public static function editTipoDeServicios($tipoDeServicios)
     {
         TipoDeServicios::where('id_tipo_servicio', $tipoDeServicios['id_tipo_servicio'])
@@ -41,14 +41,14 @@ class TipoDeServicios extends Model
             ]);
     }
 
-    //delete TipoDeServicios from the database
+   
     public static function deleteTipoDeServicios($id_tipo_servicio)
     {
         TipoDeServicios::where('id_tipo_servicio', $id_tipo_servicio)
             ->delete();
     }
 
-    //get TipoDeServicios by id_tipo_servicio from the database
+   
     public static function getTipoDeServiciosByid_tipo_servicio($id_tipo_servicio)
     {
         return TipoDeServicios::ifnd($id_tipo_servicio);

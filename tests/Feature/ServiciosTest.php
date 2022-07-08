@@ -12,7 +12,7 @@ class ServiciosTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function addServicio()
+    public function ingresar_un_servicio()
     {
         $servicios = [
             'actividad' => 'Actividad 1',
@@ -26,7 +26,7 @@ class ServiciosTest extends TestCase
     }
 
     /** @test */
-    public function editServicio()
+    public function actualizar_un_servicio()
     {
         $servicios = [
             'actividad' => 'Actividad 1',
@@ -49,7 +49,7 @@ class ServiciosTest extends TestCase
     }
 
     /** @test */
-    public function deleteServicio()
+    public function eliminar_un_servicio_de_los_registros()
     {
         $servicios = [
             'actividad' => 'Actividad 1',

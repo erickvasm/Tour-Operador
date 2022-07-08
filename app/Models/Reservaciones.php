@@ -16,7 +16,7 @@ class Reservaciones extends Model
        'cliente_fk',
    ];
 
-    //add Reservaciones in the database
+  
     public static function addReservaciones($reservaciones)
     {
         $reservacion = new Reservaciones();
@@ -28,13 +28,13 @@ class Reservaciones extends Model
 
     }
 
-    //get all Reservaciones from the database
+  
     public function getReservaciones()
     {
         return $this->all();
     }
 
-    //edit Reservaciones in the database
+    
     public static function editReservaciones($reservaciones)
     {
 
@@ -46,7 +46,7 @@ class Reservaciones extends Model
 
     }
 
-    //delete Reservaciones from the database
+  
     public static function deleteReservaciones($id_reservacion)
     {
         Reservaciones::Where('id_reservacion', $id_reservacion)

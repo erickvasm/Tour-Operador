@@ -13,10 +13,10 @@ class ClientesTest extends TestCase
 	use RefreshDatabase;
 
    /** @test */
-   public function getClienteById()
+   public function obtener_cliente_por_id()
    {
 
-      //CREAR UN CLIENTE
+   
       $datosCliente = [
          'nombre'=>'Antonio Carlos Jobim',
          'correo'=>'carlos@email.com'
@@ -26,11 +26,10 @@ class ClientesTest extends TestCase
 
       $this->assertEquals(1,Clientes::all()->count());
 
-      //EL ID DEL CLIENTE A BUSCAR
+   
       $idClienteABuscar = $cliente->id_cliente;
 
 
-      //BUSCAR CLIENTE
       $clienteBuscado = Clientes::getClienteById($idClienteABuscar);
 
       $this->assertNotNull($clienteBuscado);
@@ -38,7 +37,7 @@ class ClientesTest extends TestCase
 
 
    /** @test */
-   public function addCliente()
+   public function agregar_clientes_a_los_registros()
    {
 
       $atributosCliente = [
@@ -53,12 +52,11 @@ class ClientesTest extends TestCase
    }
 
 
-
    /** @test */
-   public function editCliente()
+   public function actualizar_los_registros_del_cliente()
    {
 
-      //CREACION DEL CLIENTE
+    
       $atributosCliente = [
          'nombre'=>'Maria Dolores',
          'correo'=>'maria@email.com'
@@ -68,8 +66,6 @@ class ClientesTest extends TestCase
 
       $this->assertEquals(1,Clientes::all()->count());
 
-
-      //EDITAR ATRIBUTOS DEL CLIENTE
 
       $atributosClienteModificados = [
          'id_cliente'=>$cliente->id_cliente,
@@ -88,13 +84,11 @@ class ClientesTest extends TestCase
    }
 
 
-
-
     /** @test */
-   public function deleteCliente()
+   public function eliminar_los_registros_de_cliente()
    {
 
-      //CREACION DEL CLIENTE
+    
       $atributosCliente = [
          'nombre'=>'Maria Dolores',
          'correo'=>'maria@email.com'
@@ -104,8 +98,6 @@ class ClientesTest extends TestCase
 
       $this->assertEquals(1,Clientes::all()->count());
 
-
-      //ELIMINAR CLIENTE
       Clientes::deleteCliente($cliente->id_cliente);
 
       $this->assertEquals(0,Clientes::all()->count());

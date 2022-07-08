@@ -19,7 +19,7 @@ class Estado extends Model
         'descripcion',
     ];
 
-    //add estados to estadobase
+
     public static function addEstado($atributosEstado)
     {
     
@@ -32,7 +32,7 @@ class Estado extends Model
     }
 
 
-    //edit estados in estadobase
+ 
     public static function editEstado($atributosEstadoModificados)
     {
 
@@ -43,13 +43,13 @@ class Estado extends Model
 
     }
 
-    //delete estados from estadobase
+    
     public static function deleteEstado($id_estado)
     {
         Estado::Where('id_estado', $id_estado)->delete();
     }
 
-    //get estados by id_estado from estadobase
+   
     public static function getEstadoById($id_estado)
     {
         return Estado::Where('id_estado', $id_estado)->first();

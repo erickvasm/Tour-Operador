@@ -17,7 +17,7 @@ class TipoDePagosTest extends TestCase
      */
     /** @test */
     
-    public function addTipoDePago()
+    public function agregar_un_tipo_de_pago()
     {
         $tipoDePagos = [
             'descripcion' => 'Pago 1'
@@ -30,7 +30,7 @@ class TipoDePagosTest extends TestCase
     }
 
     /** @test */
-    public function editTipoDePago()
+    public function acctualizar_un_tipo_de_pago()
     {
         $tipoDePago = [
             'descripcion' => 'Modificado TipoDePago',
@@ -51,7 +51,7 @@ class TipoDePagosTest extends TestCase
     }
 
     /** @test */
-    public function deleteTipoDePago()
+    public function eliminar_un_tipo_de_pago_de_los_registros()
     {
         $tipoDePago = [
             'descripcion' => 'Gasto 1'

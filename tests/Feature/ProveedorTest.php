@@ -10,9 +10,9 @@ use App\Models\Proveedor;
 class ProveedorTest extends TestCase
 {
     use RefreshDatabase;
-    //test if proveedor is added to database
+    
     /** @test */  
-    public function proveedor_is_added_to_database()
+    public function agregar_un_proveedor_a_los_registros()
     {
         $proveedores = [
             'nombre' => 'Proveedor 1',
@@ -26,10 +26,8 @@ class ProveedorTest extends TestCase
 
     }
 
-
-    //update proveedor in the database
     /** @test */
-    public function update_proveedor_in_the_database()
+    public function actualizar_los_resgitros_de_un_proveedor()
     {
        
         $proveedores = [
@@ -52,10 +50,8 @@ class ProveedorTest extends TestCase
     }
        
       
-    
-    //delete proveedor from the database
     /** @test */
-    public function delete_proveedor_from_the_database()
+    public function eliminar_los_registros_de_un_proveedor()
     {
         $proveedores = [
             'nombre' => 'Proveedor 1',

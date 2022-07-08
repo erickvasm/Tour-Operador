@@ -20,8 +20,6 @@ class Clientes extends Model
    ];
 
 
-
-    //add clientes to clientebase
     public static function addCliente($atributosCliente)
     {
     
@@ -35,7 +33,6 @@ class Clientes extends Model
     }
 
 
-    //edit clientes in clientebase
     public static function editCliente($atributosClienteModificados)
     {
 
@@ -47,13 +44,13 @@ class Clientes extends Model
 
     }
 
-    //delete clientes from clientebase
+  
     public static function deleteCliente($id_cliente)
     {
         Clientes::Where('id_cliente', $id_cliente)->delete();
     }
 
-    //get clientes by id_cliente from clientebase
+
     public static function getClienteById($id_cliente)
     {
         return Clientes::Where('id_cliente', $id_cliente)->first();

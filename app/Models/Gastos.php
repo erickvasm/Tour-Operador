@@ -22,7 +22,7 @@ class Gastos extends Model
     ];
 
 
-    //add gastos to gastobase
+  
     public static function addGasto($atributosGasto)
     {
     
@@ -39,7 +39,7 @@ class Gastos extends Model
     }
 
 
-    //edit gastos in gastobase
+    
     public static function editGasto($atributosGastoModificados)
     {
 
@@ -53,13 +53,13 @@ class Gastos extends Model
 
     }
 
-    //delete gastos from gastobase
+  
     public static function deleteGasto($id_gasto)
     {
         Gastos::Where('id_gasto', $id_gasto)->delete();
     }
 
-    //get gastos by id_gasto from gastobase
+ 
     public static function getGastoById($id_gasto)
     {
         return Gastos::Where('id_gasto', $id_gasto)->first();

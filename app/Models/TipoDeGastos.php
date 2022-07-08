@@ -16,7 +16,7 @@ class TipoDeGastos extends Model
         'descripcion'
     ];
 
-    //add TipoDeGastos in the database
+    
     public static function addTipoDeGastos($tipoDeGastos)
     {
         $tipoDeGasto = new TipoDeGastos();
@@ -26,13 +26,13 @@ class TipoDeGastos extends Model
         return $tipoDeGasto;
     }
 
-    //get all TipoDeGastos from the database
+   
     public function getTipoDeGastos()
     {
         return $this->all();
     }
 
-    //edit TipoDeGastos in the database
+    
     public static function editTipoDeGastos($tipoDeGastos)
     {
         TipoDeGastos::Where('id_tipo_gasto', $tipoDeGastos['id_tipo_gasto'])
@@ -41,14 +41,14 @@ class TipoDeGastos extends Model
             ]);
     }
 
-    //delete TipoDeGastos from the database
+    
     public static function deleteTipoDeGastos($id_tipo_gasto)
     {
         TipoDeGastos::Where('id_tipo_gasto', $id_tipo_gasto)
             ->Delete();
     }
 
-    //get TipoDeGastos by id_tipo_gasto from the database
+    
     public static function getTipoDeGastosByid_tipo_gasto($id_tipo_gasto)
     {
         return TipoDeGastos::ifnd($id_tipo_gasto);

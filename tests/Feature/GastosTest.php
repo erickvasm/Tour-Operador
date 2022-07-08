@@ -16,13 +16,11 @@ class GastosTest extends TestCase
 
 
     /** @test */
-    public function getGastoById()
+    public function obtener_gasto_por_id()
     {
-        //CREAR UN TIPO DE GASTO
+        
         $tipoDeGasto =TipoDeGastos::factory()->create();
 
-
-        //CREAR UN GASTO
         $datosGasto = [
             'fecha' => (new \DateTime('NOW')),
             'monto' => (2219.22),
@@ -35,11 +33,9 @@ class GastosTest extends TestCase
 
         $this->assertEquals(1,Gastos::all()->count());
 
-        //EL ID DEL GASTO A BUSCAR
+
         $idGastoABuscar = $gasto->id_gasto;
 
-
-        //BUSCAR GASTO
         $gastoBuscado = Gastos::getGastoById($idGastoABuscar);
 
         $this->assertNotNull($gastoBuscado);
@@ -48,12 +44,10 @@ class GastosTest extends TestCase
 
 
     /** @test */
-    public function addGasto(){
+    public function agregar_un_gasto(){
 
-        //CREAR UN TIPO DE GASTO
         $tipoDeGasto =TipoDeGastos::factory()->create();
 
-        //CREAR UN GASTO
         $datosGasto = [
             'fecha' => (new \DateTime('NOW')),
             'monto' => (2219.22),
@@ -72,14 +66,11 @@ class GastosTest extends TestCase
 
 
     /** @test */
-    public function editGasto()
+    public function actualizar_un_gasto()
     {
         
-        //CREAR UN TIPO DE GASTO
         $tipoDeGasto =TipoDeGastos::factory()->create();
 
-
-        //CREACION DEL GASTO
         $datosGasto = [
             'fecha' => (new \DateTime('NOW')),
             'monto' => (2219.22),
@@ -92,8 +83,6 @@ class GastosTest extends TestCase
 
         $this->assertEquals(1,Gastos::all()->count());
 
-
-        //EDITAR ATRIBUTOS DEL GASTO
         $atributosGastoModificados = [
             'id_gasto' => $gasto->id_gasto,
             'fecha' => (new \DateTime('NOW')),
@@ -116,12 +105,10 @@ class GastosTest extends TestCase
 
 
     /** @test */
-    public function deleteGasto()
+    public function eliminar_un_gasto()
     {
-        //CREAR UN TIPO DE GASTO
         $tipoDeGasto =TipoDeGastos::factory()->create();
 
-        //CREACION DEL GASTO
         $datosGasto = [
             'fecha' => (new \DateTime('NOW')),
             'monto' => (2219.22),
@@ -134,8 +121,6 @@ class GastosTest extends TestCase
 
         $this->assertEquals(1,Gastos::all()->count());
 
-
-        //ELIMINAR GASTO
         Gastos::deleteGasto($gasto->id_gasto);
 
         $this->assertEquals(0,Gastos::all()->count());

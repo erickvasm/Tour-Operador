@@ -16,7 +16,7 @@ class TipoDeServiciosTest extends TestCase
      * @return void
      */
     /** @test */
-    public function addTipoDeServicio()
+    public function agregar_un_tipo_de_servicio_a_los_registros()
     {
         $tipoDeServicios = [
             'descripcion' => 'Servicio 1'
@@ -28,7 +28,7 @@ class TipoDeServiciosTest extends TestCase
     }
 
     /** @test */
-    public function editTipoDeServicio()
+    public function actualizar_un_tipo_de_servicio()
     {
         $tipoDeServicios = [
             'descripcion' => 'Modificado Servicio',
@@ -49,7 +49,7 @@ class TipoDeServiciosTest extends TestCase
     }
 
     /** @test */
-    public function deleteTipoDeServicio()
+    public function eliminar_un_tipo_de_servicio_a_los_registros()
     {
         $tipoDeServicios = [
             'descripcion' => 'Gasto 1'

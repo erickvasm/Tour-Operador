@@ -17,7 +17,7 @@ class TipoDeGastosTest extends TestCase
      * @return void
      */
     /** @test */
-    public function addTipoDeGasto()
+    public function agregar_un_tipo_de_gasto_a_los_registros()
     {       
         $tipoDeGastos = [
             'descripcion' => 'Gasto 1'
@@ -30,7 +30,7 @@ class TipoDeGastosTest extends TestCase
     }
 
     /** @test */
-    public function editTipoDeGasto()
+    public function actualizar_un_tipo_de_gasto()
     {
         $tipoDeGastos = [
             'descripcion' => 'Modificado TipoDeGasto',
@@ -52,7 +52,7 @@ class TipoDeGastosTest extends TestCase
 
 
     /** @test */
-    public function deleteTipoDeGasto()
+    public function eliminar_un_tipo_de_gasto_de_los_registros()
     {
         $tipoDeGastos = [
             'descripcion' => 'Gasto 1'

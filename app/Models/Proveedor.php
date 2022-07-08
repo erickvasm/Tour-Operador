@@ -16,7 +16,7 @@ class Proveedor extends Model
         'correo',
         
     ];
-//add multiple proveedors to database
+
 public static function addProveedor($proveedores)
 {
 $proveedor = new Proveedor();
@@ -27,7 +27,7 @@ return $proveedor;
     
 }
 
-//edit proveedor in the database
+
 public static function editProveedor($Proveedor)
 {
 
@@ -40,7 +40,7 @@ public static function editProveedor($Proveedor)
 
 }
 
-//delete proveedor from the database
+
 public static function deleteProveedor($id_proveedor)
 {
     Proveedor::Where('id_proveedor', $id_proveedor)

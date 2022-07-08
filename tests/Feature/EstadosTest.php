@@ -14,11 +14,11 @@ class EstadosTest extends TestCase
     use RefreshDatabase;
 
 
-
-    public function getEstadoById()
+    /** @test */
+    public function obtener_estado_por_id()
     {
 
-        //CREAR UN ESTADO
+     
         $datosEstado = [
             'descripcion'=>'Finalizado',
         ];
@@ -27,11 +27,9 @@ class EstadosTest extends TestCase
 
         $this->assertEquals(1,Estado::all()->count());
 
-        //EL ID DEL ESTADO A BUSCAR
+      
         $idEstadoABuscar = $estado->id_estado;
 
-
-        //BUSCAR ESTADO
         $estadoBuscado = Estado::getEstadoById($idEstadoABuscar);
 
         $this->assertNotNull($estadoBuscado);
@@ -39,7 +37,7 @@ class EstadosTest extends TestCase
 
 
     /** @test */
-    public function addEstado()
+    public function agregar_un_estado()
     {
 
         $atributosEstado = [
@@ -55,10 +53,10 @@ class EstadosTest extends TestCase
 
 
     /** @test */
-    public function editEstado()
+    public function editar_un_estado()
     {
 
-        //CREACION DEL ESTADO
+     
         $atributosEstado = [
             'descripcion'=>'Finalizado',
         ];
@@ -67,8 +65,6 @@ class EstadosTest extends TestCase
 
         $this->assertEquals(1,Estado::all()->count());
 
-
-        //EDITAR ATRIBUTOS DEL ESTADO
 
         $atributosEstadoModificados = [
             'id_estado'=>$estado->id_estado,
@@ -86,13 +82,11 @@ class EstadosTest extends TestCase
     }
 
 
-
-
     /** @test */
-    public function deleteEstado()
+    public function eliminar_un_estado()
     {
 
-        //CREACION DEL ESTADO
+        
         $atributosEstado = [
             'descripcion'=>'Finalizado'
         ];
@@ -101,8 +95,6 @@ class EstadosTest extends TestCase
 
         $this->assertEquals(1,Estado::all()->count());
 
-
-        //ELIMINAR ESTADO
         Estado::deleteEstado($estado->id_estado);
 
         $this->assertEquals(0,Estado::all()->count());

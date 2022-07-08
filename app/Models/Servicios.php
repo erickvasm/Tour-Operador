@@ -19,7 +19,7 @@ class Servicios extends Model
 
     ];
 
-    //add Servicios in the database
+    
     public static function addServicios($servicios)
     {
         $servicio = new Servicios();
@@ -31,13 +31,13 @@ class Servicios extends Model
 
     }
 
-    //get all Servicios from the database
+
     public function getServicios()
     {
         return $this->all();
     }
 
-    //edit Servicios in the database
+
     public static function editServicios($servicios)
     {
 
@@ -48,7 +48,7 @@ class Servicios extends Model
             ]);
 }
 
-    //delete Servicios from the database
+ 
     public static function deleteServicios($id_servicio)
     {
         Servicios::Where('id_servicio', $id_servicio)

@@ -15,10 +15,10 @@ class ChoferVehiculoTest extends TestCase
 
 
    /** @test */
-   public function getChoferVehiculoById()
+   public function obtener_chofer_vehiculo_por_id()
    {
 
-      //CREAR UN CHOFER VEHICULO
+      
       $datosChoferVehiculo = [
          'nombre_chofer'=>'Antonio Carlos Jobim',
          'placa_vehiculo'=>'SDHASO99'
@@ -28,11 +28,11 @@ class ChoferVehiculoTest extends TestCase
 
       $this->assertEquals(1,ChoferVehiculo::all()->count());
 
-      //EL ID DEL CHOFER VEHICULO A BUSCAR
+     
       $idChoferVehiculoABuscar = $choferVehiculo->id_chofer_vehiculo;
 
 
-      //BUSCAR CHOFER VEHICULO
+     
       $choferVehiculoBuscado = ChoferVehiculo::getChoferVehiculoById($idChoferVehiculoABuscar);
 
       $this->assertNotNull($choferVehiculoBuscado);
@@ -40,7 +40,7 @@ class ChoferVehiculoTest extends TestCase
 
 
    /** @test */
-   public function addChoferVehiculo()
+   public function agregar_un_chofer_a_vehiculo()
    {
 
       $atributosChoferVehiculo = [
@@ -57,10 +57,10 @@ class ChoferVehiculoTest extends TestCase
 
 
    /** @test */
-   public function editChoferVehiculo()
+   public function editar_un_chofer_vehiculo()
    {
 
-      //CREACION DEL CHOFER VEHICULO
+     
       $atributosChoferVehiculo = [
         'nombre_chofer'=>'Jose Antonio',
         'placa_vehiculo'=>'B928883'
@@ -71,7 +71,7 @@ class ChoferVehiculoTest extends TestCase
       $this->assertEquals(1,ChoferVehiculo::all()->count());
 
 
-      //EDITAR ATRIBUTOS DEL CHOFER VEHICULO
+    
 
       $atributosChoferVehiculoModificdos = [
          'id_chofer_vehiculo'=>$choferVehiculo->id_chofer_vehiculo,
@@ -93,10 +93,10 @@ class ChoferVehiculoTest extends TestCase
 
 
     /** @test */
-   public function deleteChoferVehiculo()
+   public function eliminar_chofer_de_los_registros()
    {
 
-      //CREACION DEL CHOFER VEHICULO
+      
       $atributosChoferVehiculo = [
          'nombre_chofer'=>'Spike Spiegel',
          'placa_vehiculo'=>'B8282771'
@@ -106,8 +106,6 @@ class ChoferVehiculoTest extends TestCase
 
       $this->assertEquals(1,ChoferVehiculo::all()->count());
 
-
-      //ELIMINAR CHOFER VEHICULO
       ChoferVehiculo::deleteChoferVehiculo($choferVehiculo->id_chofer_vehiculo);
 
       $this->assertEquals(0,ChoferVehiculo::all()->count());

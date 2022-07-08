@@ -22,7 +22,7 @@ class ReservacionesTest extends TestCase
 
 
     /** @test */
-    public function addReservacionItem(){
+    public function agregar_un_item_de_reservacion(){
         $cliente = Clientes::factory()->create();
         $servicio = Servicios::factory()->create();
         $proveedor = Proveedor::factory()->create();
@@ -64,7 +64,7 @@ class ReservacionesTest extends TestCase
 
     
     /** @test */
-    public function addReservacion()
+    public function ingresar_una_reservacion()
     {
         $cliente =Clientes::factory()->create();
         $reservaciones = [
@@ -80,7 +80,7 @@ class ReservacionesTest extends TestCase
     }
 
     /** @test */
-    public function editReservacion()
+    public function editar_una_reservacion()
     {
         $cliente =Clientes::factory()->create();
         $reservaciones = [
@@ -106,7 +106,7 @@ class ReservacionesTest extends TestCase
     }
 
     /** @test */
-    public function deleteReservacion()
+    public function eliminar_una_reservacion()
     {
         $cliente =Clientes::factory()->create();
         $reservaciones = [
@@ -123,9 +123,6 @@ class ReservacionesTest extends TestCase
 
         $this->assertEquals(0, Reservaciones::all()->count());
     }
-
-
-
 
 
 
