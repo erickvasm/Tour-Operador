@@ -104,6 +104,7 @@ class ReservacionesTest extends TestCase
 
         $this->assertEquals('2022-01-01', $elReservacion->fecha_reserva);
     }
+    
 
     /** @test */
     public function eliminar_una_reservacion()
@@ -124,6 +125,48 @@ class ReservacionesTest extends TestCase
         $this->assertEquals(0, Reservaciones::all()->count());
     }
 
+
+
+
+
+    /** @test */
+    public function agregar_un_item_a_la_reservacion()
+    {
+        $cliente =Clientes::factory()->create();
+        $reservacion=Reservaciones::addReservaciones([
+            'fecha_reserva' => '2020-01-01',
+            'cliente_fk' => $cliente->id_cliente,
+
+        ]);
+
+        $reservacionItem = ReservacionItem::factory()->create();
+        
+        $reservacion->addReservacionItem($reservacionItem);
+
+
+        $this->assertEquals(1,$reservacion->reservacionItems()->count());
+
+    }
+
+
+
+    /** @test */
+    public function agregar_varios_item_a_la_reservacion()
+    {
+        $cliente =Clientes::factory()->create();
+        $reservacion=Reservaciones::addReservaciones([
+            'fecha_reserva' => '2020-01-01',
+            'cliente_fk' => $cliente->id_cliente,
+
+        ]);
+
+        $reservacionItems = ReservacionItem::factory(3)->create();
+        
+        $reservacion->addReservacionItem($reservacionItems);
+
+        $this->assertEquals(3,$reservacion->reservacionItems()->count());
+
+    }
 
 
 }

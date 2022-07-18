@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\ReservacionItem;
 
 class Reservaciones extends Model
 {
@@ -51,6 +52,22 @@ class Reservaciones extends Model
     {
         Reservaciones::Where('id_reservacion', $id_reservacion)
             ->Delete();
+
+    }
+
+
+   
+
+   
+    public function reservacionItems() {
+        return $this->hasMany(ReservacionItem::class,'reservacion_fk','id_reservacion');
+    }
+
+    public function addReservacionItem($reservacionItem) {
+
+        $metodo = ($reservacionItem instanceof ReservacionItem)?'save':'saveMany';
+
+        $this->reservacionItems()->$metodo($reservacionItem);
 
     }
 

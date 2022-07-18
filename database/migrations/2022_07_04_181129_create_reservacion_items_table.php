@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('pasajeros');
             $table->integer('tarifa');
             $table->string('observaciones');
-            $table->unsignedBigInteger('reservacion_fk');
+            $table->unsignedBigInteger('reservacion_fk')->nullable();
             $table->foreign('reservacion_fk')->references('id_reservacion')->on('reservaciones')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('estado_fk');
             $table->foreign('estado_fk')->references('id_estado')->on('estados')->onUpdate('cascade')->onDelete('cascade');
